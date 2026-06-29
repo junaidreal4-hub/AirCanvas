@@ -54,6 +54,11 @@ def is_index_only(landmarks):
     return index and not middle and not ring and not pinky
 
 
+def is_open_palm(landmarks):
+    """All four fingers extended — the 'show palette / flip canvas' pose."""
+    return all(get_extended_fingers(landmarks))
+
+
 class HandState:
     """Per-hand tracked state, smoothed across frames."""
 
@@ -84,8 +89,9 @@ class HandState:
         self.index_tip  = _smooth(self.prev_index, _to_px(index, w, h))
         self.prev_index = self.index_tip
 
-        self.drawing = is_index_only(landmarks)
-        self.fist    = is_fist(landmarks)
+        self.drawing   = is_index_only(landmarks)
+        self.fist      = is_fist(landmarks)
+        self.open_palm = is_open_palm(landmarks)
 
     def reset(self):
         self.present       = False
@@ -97,6 +103,7 @@ class HandState:
         self.prev_index    = None
         self.drawing       = False
         self.fist          = False
+        self.open_palm     = False
 
 
 class GestureEngine:
