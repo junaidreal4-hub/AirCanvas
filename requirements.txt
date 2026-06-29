@@ -1,0 +1,4 @@
+# AirCanvas Pro — Python 3.11 (MediaPipe Tasks API requires 3.9–3.12)
+mediapipe>=0.10.30
+opencv-python>=4.8
+numpy>=1.24

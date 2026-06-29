@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(venv/Scripts/python.exe -c \"import mediapipe,cv2,numpy; print\\('mediapipe',mediapipe.__version__\\); print\\('opencv',cv2.__version__\\); print\\('numpy',numpy.__version__\\)\")"
+    ]
+  }
+}
