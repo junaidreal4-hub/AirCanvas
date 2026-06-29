@@ -19,6 +19,11 @@ Thumbs.db
 exports/
 drawing*.png
 
-# Model file is large (~7.8 MB) — keep it tracked so the app runs out of the box.
-# If you prefer to fetch it on setup instead, uncomment the next line:
+# Claude AI IDE settings (local tool config)
+.claude/
+
+# AI session handoff notes
+HANDOFF.md
+
+# (Optional) Large MediaPipe model file — download separately on setup
 # hand_landmarker.task
